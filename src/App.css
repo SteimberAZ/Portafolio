@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@layer utilities {
+  @keyframes shine {
+    0% {
+      left: -150%;
+    }
+    100% {
+      left: 150%;
+    }
+  }
+
+  .animate-shine {
+    animation: shine 3s linear infinite;
+  }
+  @keyframes showup {
+    0% {
+      top: -50%;
+    }
+    100% {
+      top: 5;
+    }
+  }
+
+  .animate-showup {
+    animation: showup 0.5s ease-out forwards;
+  }
+  @keyframes showleft1 {
+    0% {
+      left: -50%;
+    }
+    100% {
+      left: 50%;
+    }
+  }
+
+  .animate-showleft1 {
+    animation: left1 2s ease-out forwards;
+  }
+   @keyframes showright1 {
+    0% {
+      right: -50%;
+    }
+    100% {
+      right: 50%;
+    }
+  }
+
+  .animate-showright1 {
+    animation: right1 1s ease-out forwards;
+  }
+
+}
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
