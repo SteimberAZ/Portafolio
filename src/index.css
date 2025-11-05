@@ -63,3 +63,30 @@
 .animate-scroll {
   animation: scroll 20s linear infinite;
 }
+html, body {
+  overflow: hidden;
+}
+
+.container-scroll {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Oculta scrollbar sin quitar scroll */
+.container-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background-color: transparent;
+}
+.scroll-scroll::-webkit-scrollbar-thumb {
+  background: transparent; /* hace el “pulgar” invisible */
+}
+
+.scroll-scroll::-webkit-scrollbar-track {
+  background: transparent; /* fondo invisible */
+}
+
+/* Compatibilidad con Firefox */
+.scroll-scroll {
+  scrollbar-color: transparent transparent;
+}

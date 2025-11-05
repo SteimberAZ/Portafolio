@@ -36,11 +36,14 @@ type Props = {
 };
 
 function Hero({ texture }: Props) {
+  
   const { position, opacity } = useSpring({
     from: { position: [-50, 0, 0], opacity: 0 },
     to: { position: [0, 0, 0], opacity: 1 },
     config: { tension: 150, friction: 20 },
+    
   });
+  
 
   return (
     <Canvas className="transition-all duration-200 w-[0px] h-auto overflow-visible z-50 md:flex hidden md:w-auto relative">
