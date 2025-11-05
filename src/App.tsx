@@ -17,12 +17,7 @@ function App() {
     { data: "Sobre mí", link: "" },
     { data: "Contacto", link: "" },
   ];
-  const itemsCar= [
-    { texture: "/imge.png" },
-    { texture:"/imge.png" },
-    { texture: "/imge.png" },
-    { texture: "/imge.png"  },
-  ];
+ 
   const text = `RANDY ARTEAGA   
   ESTUDIANTE DE ING.DE SOFTWARE`;
   useEffect(() => {
