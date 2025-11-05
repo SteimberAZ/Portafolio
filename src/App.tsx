@@ -81,7 +81,7 @@ function App() {
   return (
    
    
-    <div className="container-scroll w-screen h-screen flex flex-row bg-blue-700 justify-center items-center text-black px-[500vw] overflow-x-hidden overflow-y-hidden snap-x snap-mandatory scroll-smooth">
+    <div className="container-scroll  w-screen h-screen flex flex-row bg-blue-700 justify-center items-center text-black px-[500vw] overflow-x-hidden overflow-y-auto snap-x snap-mandatory scroll-smooth gap-2 z-1">
       
       {/* 🧭 NAVBAR */}
       <Navbar items={itemsNav} onNavigate={handleNavigate} />
@@ -90,7 +90,7 @@ function App() {
       <section
         id="inicio"
         ref={inicioRef}
-        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 overflow-hidden"
+        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth "
       >
         {!isMobile ? (
           <div className="w-[500px] h-[500px] flex justify-center items-center">
@@ -106,18 +106,18 @@ function App() {
         </div>
       </section>
 
-      {/* 💼 SECCIÓN PROYECTOS */}
+      
       <section
         id="proyectos"
         ref={proyectosRef}
-        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0"
+        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth "
       >
         {!isMobile ? (
           <div className="w-[500px] h-[500px] flex justify-center items-center">
             <Hero texture={image} />
           </div>
         ) : (
-          <div className="w-[250px] h-[250px] flex justify-center items-center">
+          <div className="w-[250px] h-[250px] flex justify-center items-center ">
             <HeroM />
           </div>
         )}
@@ -128,25 +128,25 @@ function App() {
       <section
         id="proyectos"
         ref={sobreMiRef}
-        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0"
+        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth "
       >
        
-        <div className=" relative shadow-sm top-[60px] h-[70%] min-h-[500px]  w-[80%] min-w-[330px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
+        <div className=" relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
 
-          <div className=" flex w-[80%] h-[20%] justify-center  xl:text-8xl text-[45px] font-extrabold flex-col ">
+          <div className=" flex w-[80%]   h-[20%] justify-center  xl:text-8xl text-[45px] font-extrabold flex-col ">
               Sobre mí
               
           </div>
-          <div className=" flex w-[80%] h-[10%] text-sky-300 lg:text-4xl text-[25px]  font-bold">
+          <div className=" flex w-[80%] h-[10%]  text-sky-300 lg:text-4xl text-[25px]  font-bold ">
               Randy Arteaga
           </div>
-          <div className=" flex w-[80%] h-[65%] lg:h-[40%] text-white md:text-[1.5rem]  lg:text-3xl  sm:text-[1.2rem]  text-[1rem]  font-normal border-b border-white/50 ">
+          <div className=" flex w-[80%] h-[65%] lg:h-[40%] text-white md:text-[1.5rem]  lg:text-3xl  sm:text-[1.2rem]  text-[1rem]  font-normal border-b border-white/50 hmd">
              Hola, tengo 19 años y soy de Ecuador.
 Estudio Ingeniería de Software en la Universidad Técnica de Manabí.
 Me apasiona la tecnología, el diseño y el desarrollo de software.
 Este portafolio refleja mi crecimiento y aprendizaje como futuro desarrollador.
           </div>
-          <div className=" flex w-[80%] h-[10%] text-white text-4xl font-normal ">
+          <div className=" flex w-[80%] h-[10%] text-white text-4xl font-normal  ">
            <div className="flex gap-6 justify-center items-center mt-6">
              
               <a

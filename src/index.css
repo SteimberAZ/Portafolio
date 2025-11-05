@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
 @layer utilities {
   @keyframes shine {
     0% {
@@ -64,7 +65,7 @@
   animation: scroll 20s linear infinite;
 }
 html, body {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .container-scroll {
@@ -89,4 +90,16 @@ html, body {
 /* Compatibilidad con Firefox */
 .scroll-scroll {
   scrollbar-color: transparent transparent;
+}
+@media (max-height: 800px) {
+  .hmd {
+    height: 40%; 
+    font-size: 15px;
+  }
+}
+@media (max-height: 800px) {
+  .pth {
+    padding-top: 350px;
+    
+  }
 }
