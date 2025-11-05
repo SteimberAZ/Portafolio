@@ -131,7 +131,7 @@ function App() {
         className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0"
       >
        
-        <div className=" relative shadow-sm top-[50px] h-[70%] min-h-[500px]  w-[80%] min-w-[300px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
+        <div className=" relative shadow-sm top-[60px] h-[70%] min-h-[500px]  w-[80%] min-w-[330px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
 
           <div className=" flex w-[80%] h-[20%] justify-center  xl:text-8xl text-[45px] font-extrabold flex-col ">
               Sobre mí
