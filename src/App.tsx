@@ -133,14 +133,14 @@ function App() {
        
         <div className=" relative shadow-sm top-[50px] h-[70%] min-h-[500px]  w-[80%] min-w-[300px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
 
-          <div className=" flex w-[80%] h-[20%] justify-center  text-8xl font-extrabold flex-col ">
+          <div className=" flex w-[80%] h-[20%] justify-center  xl:text-8xl text-[45px] font-extrabold flex-col ">
               Sobre mí
               
           </div>
-          <div className=" flex w-[80%] h-[10%] text-sky-300 text-4xl font-bold">
+          <div className=" flex w-[80%] h-[10%] text-sky-300 lg:text-4xl text-[25px]  font-bold">
               Randy Arteaga
           </div>
-          <div className=" flex w-[80%] h-[30%] text-white text-4xl font-normal border-b border-white/50 ">
+          <div className=" flex w-[80%] h-[65%] lg:h-[40%] text-white md:text-[1.5rem]  lg:text-3xl  sm:text-[1.2rem]  text-[1rem]  font-normal border-b border-white/50 ">
              Hola, tengo 19 años y soy de Ecuador.
 Estudio Ingeniería de Software en la Universidad Técnica de Manabí.
 Me apasiona la tecnología, el diseño y el desarrollo de software.
