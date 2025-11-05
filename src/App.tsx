@@ -33,11 +33,11 @@ function App() {
   const proyectosRef = useRef<HTMLDivElement | null>(null);
   const sobreMiRef = useRef<HTMLDivElement | null>(null);
   const handleNavigate = (section: string) => {
-    const refs: Record<string, React.RefObject<HTMLDivElement>> = {
-      inicio: inicioRef,
-      proyectos: proyectosRef,
-      sobreMi: sobreMiRef,
-    };
+   const refs: Record<string, React.RefObject<HTMLDivElement | null>> = {
+    inicio: inicioRef,
+    proyectos: proyectosRef,
+    sobreMi: sobreMiRef,
+  };
 
     const ref = refs[section];
     ref?.current?.scrollIntoView({ behavior: "smooth", inline: "start" });
@@ -51,23 +51,22 @@ function App() {
   }, []);
 
  // 🔹 Función para moverse a una sección específica
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({
-        behavior: "smooth",
-        inline: "start",
-        block: "nearest",
-      });
-    }
-  };
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+  if (ref.current) {
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+      inline: "start",
+      block: "nearest",
+    });
+  }
+};
 
  
   // 🔹 Detectar cambio de orientación o tamaño
   useEffect(() => {
     const handleResizeOrOrientation = () => {
-      scrollToSection(inicioRef); // 🔁 Siempre vuelve al inicio
-    };
-
+    scrollToSection(inicioRef as React.RefObject<HTMLDivElement | null>); // ✅
+  };
     // Escuchar tanto cambio de tamaño como cambio de orientación
     window.addEventListener("resize", handleResizeOrOrientation);
     window.addEventListener("orientationchange", handleResizeOrOrientation);
