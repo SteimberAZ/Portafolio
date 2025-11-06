@@ -140,14 +140,14 @@ function App() {
           <div className=" flex w-[80%] h-[10%]  text-sky-300 lg:text-4xl text-[25px]  font-bold ">
               Randy Arteaga
           </div>
-          <div className=" flex w-[80%] h-[65%] lg:h-[40%] text-white md:text-[1.5rem]  lg:text-3xl  sm:text-[1.2rem]  text-[1rem]  font-normal border-b border-white/50 hmd">
+          <div className=" flex w-[80%] h-[45%] lg:h-[40%] text-white md:text-[1.5rem]  lg:text-3xl  sm:text-[1.2rem]  text-[1rem]  font-normal border-b border-white/50 hmd">
              Hola, tengo 19 años y soy de Ecuador.
 Estudio Ingeniería de Software en la Universidad Técnica de Manabí.
 Me apasiona la tecnología, el diseño y el desarrollo de software.
 Este portafolio refleja mi crecimiento y aprendizaje como futuro desarrollador.
           </div>
-          <div className=" flex w-[80%] h-[10%] text-white text-4xl font-normal  ">
-           <div className="flex gap-6 justify-center items-center mt-6">
+          <div className=" flex w-[80%] h-[10%] text-white text-4xl font-normal justify-center items-center  ">
+           <div className="flex gap-6  justify-start mt-6 w-[100%] flex-row">
              
               <a
                 href="https://www.instagram.com/steimber.1"

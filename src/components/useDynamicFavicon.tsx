@@ -9,7 +9,7 @@ export function useDynamicFavicon() {
 
     // 👇 Tipamos el parámetro correctamente como boolean
     const updateFavicon = (isDark: boolean) => {
-      favicon.href = isDark ? "/LogoPngDark.png" : "/LogoPngLight.png";
+      favicon.href = isDark ? "/LogoDark.ico" : "/LogoLight.ico";
     };
 
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
