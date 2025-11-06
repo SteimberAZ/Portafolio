@@ -11,7 +11,7 @@ type Props = {
 
 function Navbar({ items, onNavigate }: Props) {
   return (
-    <div className="shadow-sm fixed top-10 left-1/2 -translate-x-1/2 w-[50%] min-w-[330px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-1 ">
+    <div className="shadow-sm fixed top-1 left-1/2 -translate-x-1/2 w-[50%] min-w-[330px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-1 ">
       <div className="flex items-center gap-2 lg:gap-10 justify-center">
         {items.map((item, idx) => (
           <button
@@ -33,6 +33,7 @@ function Navbar({ items, onNavigate }: Props) {
           bg-gradient-to-r from-transparent via-white/40 to-transparent 
           animate-shine pointer-events-none"
       ></span>
+      
     </div>
   );
 }

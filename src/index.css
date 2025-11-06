@@ -93,13 +93,27 @@ html, body {
 }
 @media (max-height: 800px) {
   .hmd {
-    height: 50%; 
+    height: 47%; 
     font-size: 15px;
+    padding-bottom: 10px;
+    
   }
 }
 @media (max-height: 800px) {
+  .wmd {
+    width: 40%;
+    
+  }
+}
+@media (max-height: 400px) {
   .pth {
-    padding-top: 50px;
+    transform: translateY(200px);
+    
+  }
+}
+@media (max-height: 400px) {
+  .hth {
+    height: 95%;
     
   }
 }

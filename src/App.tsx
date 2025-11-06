@@ -81,7 +81,7 @@ function App() {
   return (
    
    
-    <div className="container-scroll  w-screen h-screen flex flex-row bg-blue-700 justify-center items-center text-black px-[500vw] overflow-x-hidden overflow-y-auto snap-x snap-mandatory scroll-smooth gap-2 z-1">
+    <div className="container-scroll  w-screen h-screen flex flex-row bg-blue-700 justify-center items-center text-black px-[500vw] overflow-x-hidden overflow-y-auto snap-x snap-mandatory scroll-smooth gap-2 z-1 ">
       
       {/* 🧭 NAVBAR */}
       <Navbar items={itemsNav} onNavigate={handleNavigate} />
@@ -128,10 +128,10 @@ function App() {
       <section
         id="proyectos"
         ref={sobreMiRef}
-        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth "
+        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth  "
       >
        
-        <div className=" relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
+        <div className=" relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] hth bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
 
           <div className=" flex w-[80%]   h-[20%] justify-center  xl:text-8xl text-[45px] font-extrabold flex-col ">
               Sobre mí
@@ -146,7 +146,7 @@ Estudio Ingeniería de Software en la Universidad Técnica de Manabí.
 Me apasiona la tecnología, el diseño y el desarrollo de software.
 Este portafolio refleja mi crecimiento y aprendizaje como futuro desarrollador.
           </div>
-          <div className=" flex w-[80%] h-[10%] text-white text-4xl font-normal justify-center items-center  ">
+          <div className=" flex w-[80%] h-[10%] text-white text-4xl font-normal justify-center items-center wmd ">
            <div className="flex gap-6  justify-start mt-6 w-[100%] flex-row">
              
               <a
