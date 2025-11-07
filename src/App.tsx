@@ -8,8 +8,30 @@ import { useEffect, useState } from "react";
 import TextoFor from "./components/TextoFor";
 import useDynamicFavicon from "./components/useDynamicFavicon";
 import { useRef } from "react";
+import InfiniteScroll from "./components/InfiniteScroll";
+import AboutCard from "./components/AboutCard";
+import useAutoScrollTop from "./hooks/useAutoScrollTop";
 
 function App() {
+  const proyectos = [
+  {
+    image: "/Blank.png",
+    description: "Proyecto 0: descripción ",
+  },
+  {
+    image: "/Blank.png",
+    description: "Proyecto 0: descripción ",
+  },
+  {
+    image: "/Blank.png",
+    description: "Proyecto 0: descripción ",
+  },
+  {
+    image: "/Blank.png",
+    description: "Proyecto 0: descripción ",
+  },
+  ];
+
   useDynamicFavicon();
   const [isMobile, setIsMobile] = useState(false);
   const image = useLoader(TextureLoader, "/imge.png");
@@ -22,7 +44,7 @@ function App() {
  
   const text = `RANDY ARTEAGA   
   ESTUDIANTE DE ING.DE SOFTWARE`;
-  const text2 = `Hola aqui van los proyecto pero aun no lo eh echo jajaja, en sobre mi si hay cosas`;
+  
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 1357);
     handleResize(); // ejecutar una vez al inicio
@@ -76,12 +98,12 @@ function App() {
       window.removeEventListener("orientationchange", handleResizeOrOrientation);
     };
   }, []);
-
+  useAutoScrollTop();
 
   return (
    
    
-    <div className="container-scroll  w-screen h-screen flex flex-row bg-blue-700 justify-center items-center text-black px-[500vw] overflow-x-hidden overflow-y-auto snap-x snap-mandatory scroll-smooth gap-2 z-1 ">
+    <div className="container-scroll  w-screen h-screen flex flex-row bg-blue-700 justify-center items-center text-black px-[500vw] overflow-x-hidden overflow-y-auto snap-x snap-mandatory scroll-smooth gap-2 z-1  ">
       
       {/* 🧭 NAVBAR */}
       <Navbar items={itemsNav} onNavigate={handleNavigate} />
@@ -92,17 +114,19 @@ function App() {
         ref={inicioRef}
         className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth "
       >
-        {!isMobile ? (
-          <div className="w-[500px] h-[500px] flex justify-center items-center">
-            <Hero texture={image} />
+        <div className="  relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] hth bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex md:flex-row flex-col">
+          {!isMobile ? (
+            <div className="w-[500px] h-[500px] flex justify-center items-center">
+              <Hero texture={image} />
+            </div>
+          ) : (
+            <div className="w-[250px] h-[250px] flex justify-center items-center">
+              <HeroM />
+            </div>
+          )}
+          <div className="w-[250px] md:w-[500px] flex justify-center items-center">
+            <TextoFor texto={text.split("")} />
           </div>
-        ) : (
-          <div className="w-[250px] h-[250px] flex justify-center items-center">
-            <HeroM />
-          </div>
-        )}
-        <div className="w-[250px] md:w-[500px] flex justify-center items-center">
-          <TextoFor texto={text.split("")} />
         </div>
       </section>
 
@@ -110,89 +134,48 @@ function App() {
       <section
         id="proyectos"
         ref={proyectosRef}
-        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth "
+        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth  "
       >
-        {!isMobile ? (
-          <div className="w-[500px] h-[500px] flex justify-center items-center">
-            <Hero texture={image} />
+        <div className="  relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] hth bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
+              
+          <div className=" flex w-[80%]   h-[25%] justify-center  xl:text-8xl text-[45px] font-extrabold flex-col ">
+              Proyectos
+              
           </div>
-        ) : (
-          <div className="w-[250px] h-[250px] flex justify-center items-center ">
-            <HeroM />
-          </div>
-        )}
-        <div className="w-[250px] md:w-[500px] flex justify-center items-center">
-          <TextoFor texto={text2.split("")} />
+          <InfiniteScroll projects={proyectos}  />
         </div>
       </section>
       <section
         id="proyectos"
         ref={sobreMiRef}
-        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth  "
+        className="snap-start w-screen h-screen  flex justify-center items-center shrink-0 pth  "
       >
        
-        <div className=" relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] hth bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
-
-          <div className=" flex w-[80%]   h-[20%] justify-center  xl:text-8xl text-[45px] font-extrabold flex-col ">
-              Sobre mí
-              
-          </div>
-          <div className=" flex w-[80%] h-[10%]  text-sky-300 lg:text-4xl text-[25px]  font-bold ">
-              Randy Arteaga
-          </div>
-          <div className=" flex w-[80%] h-[45%] lg:h-[40%] text-white md:text-[1.5rem]  lg:text-3xl  sm:text-[1.2rem]  text-[1rem]  font-normal border-b border-white/50 hmd">
-             Hola, tengo 19 años y soy de Ecuador.
-Estudio Ingeniería de Software en la Universidad Técnica de Manabí.
-Me apasiona la tecnología, el diseño y el desarrollo de software.
-Este portafolio refleja mi crecimiento y aprendizaje como futuro desarrollador.
-          </div>
-          <div className=" flex w-[80%] h-[10%] text-white text-4xl font-normal justify-center items-center wmd ">
-           <div className="flex gap-6  justify-start mt-6 w-[100%] flex-row">
-             
-              <a
-                href="https://www.instagram.com/steimber.1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:scale-110 transition-transform duration-200"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg"
-                  alt="Instagram"
-                  className="w-8 h-8 invert dark:invert-0"
-                />
-              </a>
-
-             
-              <a
-                href="https://www.tiktok.com/@randy_arteaga19"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:scale-110 transition-transform duration-200"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg"
-                  alt="TikTok"
-                  className="w-8 h-8 invert dark:invert-0"
-                />
-              </a>
-
-              
-              <a
-                href="https://github.com/SteimberAZ"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:scale-110 transition-transform duration-200"
-              >
-                <img
-                  src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg"
-                  alt="GitHub"
-                  className="w-8 h-8 invert dark:invert-0"
-                />
-              </a>
-            </div>
-
-          </div>
-        </div>
+       <AboutCard
+        title="Sobre mí"
+        name="Randy Arteaga"
+        description={`Hola, tengo 19 años y soy de Ecuador.
+        Estudio Ingeniería de Software en la Universidad Técnica de Manabí.
+        Me apasiona la tecnología, el diseño y el desarrollo de software.
+        Este portafolio refleja mi crecimiento y aprendizaje como futuro desarrollador.`}
+        socialLinks={[
+          {
+            href: "https://www.instagram.com/steimber.1",
+            icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg",
+            alt: "Instagram",
+          },
+          {
+            href: "https://www.tiktok.com/@randy_arteaga19",
+            icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg",
+            alt: "TikTok",
+          },
+          {
+            href: "https://github.com/SteimberAZ",
+            icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg",
+            alt: "GitHub",
+          },
+        ]}
+      />
 
       </section>
     </div>
