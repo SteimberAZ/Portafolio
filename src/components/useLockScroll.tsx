@@ -12,7 +12,7 @@ export const useLockScroll = (locked: boolean) => {
       body.style.top = `-${scrollY}px`;
       body.style.left = "0";
       body.style.right = "0";
-      body.style.width = "4000px";
+      body.style.width = "100%";
       body.style.height = "4000px";
       body.style.overflow = "hidden"; // bloquea el scroll
     } else {
