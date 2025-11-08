@@ -72,33 +72,6 @@ function App() {
     return () => clearTimeout(timeout);
   }, []);
 
- // 🔹 Función para moverse a una sección específica
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
-  if (ref.current) {
-    ref.current.scrollIntoView({
-      behavior: "smooth",
-      inline: "start",
-      block: "nearest",
-    });
-  }
-};
-
- 
-  // 🔹 Detectar cambio de orientación o tamaño
-  useEffect(() => {
-    const handleResizeOrOrientation = () => {
-    scrollToSection(inicioRef as React.RefObject<HTMLDivElement | null>); // ✅
-  };
-    // Escuchar tanto cambio de tamaño como cambio de orientación
-    window.addEventListener("resize", handleResizeOrOrientation);
-    window.addEventListener("orientationchange", handleResizeOrOrientation);
-
-    return () => {
-      window.removeEventListener("resize", handleResizeOrOrientation);
-      window.removeEventListener("orientationchange", handleResizeOrOrientation);
-    };
-  }, []);
-
 
   return (
    
