@@ -76,7 +76,7 @@ function App() {
   return (
    
     
-    <div className="container-scroll  w-screen h-screen flex md:flex-row flex-col bg-blue-700 justify-center items-center text-black px-[500vw] py-[180vh]  md:py-[0vh]    gap-[200px] z-1 overflow-auto">
+    <div className="container-scroll  w-screen h-screen flex md:flex-row flex-col bg-blue-700 justify-center items-center text-black px-[0vw] md:px-[500vw] py-[180vh]  md:py-[0vh]    gap-[200px] z-1 overflow-auto">
     
       {/* 🧭 NAVBAR */}
       <Navbar items={itemsNav} onNavigate={handleNavigate} />
