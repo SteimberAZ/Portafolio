@@ -11,7 +11,7 @@ type Props = {
 
 function Navbar({ items, onNavigate }: Props) {
   return (
-    <div className="shadow-sm fixed top-1 left-1/2 -translate-x-1/2 w-[50%] min-w-[330px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-0 ">
+    <div className="shadow-sm fixed top-1 left-1/2 -translate-x-1/2 w-[50%] min-w-[330px] bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup md:z-0 z-50">
       <div className="flex items-center gap-2 lg:gap-10 justify-center">
         {items.map((item, idx) => (
           <button
