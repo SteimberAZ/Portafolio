@@ -98,7 +98,7 @@ html, body {
   overflow-y: hidden;
  
   overscroll-behavior: none;
-  touch-action: none;   
+  
 }
 
 /* Oculta scrollbar sin quitar scroll */
@@ -133,7 +133,7 @@ html, body {
     
   }
 }
-@media (max-height: 400px) {
+@media (max-height: 600px) {
   .pth {
     transform: translateY(200px);
     

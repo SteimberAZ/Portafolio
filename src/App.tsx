@@ -10,7 +10,7 @@ import useDynamicFavicon from "./components/useDynamicFavicon";
 import { useRef } from "react";
 import InfiniteScroll from "./components/InfiniteScroll";
 import AboutCard from "./components/AboutCard";
-
+import useLockScroll from "./components/useLockScroll";
 
 function App() {
   const proyectos = [
@@ -71,12 +71,12 @@ function App() {
     }, 500); // espera medio segundo para que cargue todo
     return () => clearTimeout(timeout);
   }, []);
-
+  useLockScroll(true);  // bloquea el scroll
 
   return (
    
     
-    <div className="container-scroll  w-screen h-screen flex md:flex-row flex-col bg-blue-700 justify-center items-center text-black px-[0vw] md:px-[500vw] py-[180vh]  md:py-[0vh]    gap-[200px] z-1 overflow-auto">
+    <div className="container-scroll  w-screen h-screen flex md:flex-row flex-col bg-blue-700 justify-center items-center text-black px-[0vw] md:px-[500vw] py-[5000px]  md:py-[0vh]    gap-[1000px] z-1 ">
     
       {/* 🧭 NAVBAR */}
       <Navbar items={itemsNav} onNavigate={handleNavigate} />
@@ -85,7 +85,7 @@ function App() {
       <section
         id="inicio"
         ref={inicioRef}
-        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth  "
+        className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth "
       >
         <div className="  relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] hth bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex md:flex-row flex-col">
           {!isMobile ? (
