@@ -48,7 +48,7 @@ function Hero({ texture }: Props) {
   return (
     <Canvas className="transition-all duration-200 w-[0px] h-auto overflow-visible z-50 md:flex hidden md:w-auto relative">
       <ambientLight intensity={1} />
-      <pointLight position={[15, 15, 20]} />
+      <pointLight position={[1, 1, 20]} />
 
       <a.mesh  position={position as any}>
         <boxGeometry args={[6, 6, 0]}  />

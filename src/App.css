@@ -60,6 +60,76 @@
     }
   }
 
-  .animate-scroll {
-    animation: scroll 20s linear infinite;
+
+  @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+  }
+  .gradient-bg {
+            background: linear-gradient(-45deg, #4a9fc4, #65a0e3, #4782ea, #1d62bd);
+            background-size: 400% 400%;
+            animation: gradient 10s ease infinite;
+  }
+  .shape-blob {
+            background: rgba(59, 130, 246, 0.5);
+            height: 1200px;
+            width: 1200px;
+            border-radius: 30% 50% 20% 40%;
+            animation: transform 20s ease-in-out infinite both alternate, movement_one 40s ease-in-out infinite both;
+            opacity: 0.8;
+            position: absolute;
+            
+            z-index: 0;
+  }
+        
+  .shape-blob.one {
+            z-index: 0;
+            position: absolute;
+            height: 1300px;
+            width: 1500px;
+          left: -2700px;
+            transform: rotate(-180deg);
+            animation: transform 30s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both;
+  }
+        
+  .shape-blob.two {
+            z-index: 0;
+            position: absolute;
+            height: 1050px;
+            width: 1350px;
+           left: -2700px;
+            transform: rotate(-180deg);
+            animation: transform 40s ease-in-out infinite both alternate, movement_two 60s ease-in-out infinite both;
+  }
+  .shape-blob.three {
+            z-index: 0;
+            position: absolute;
+            height: 1350px;
+            width: 1350px;
+           right: 0;
+            transform: rotate(-180deg);
+            animation: transform 10s ease-in-out infinite both alternate, movement_three 10s ease-in-out infinite both;
+  }
+        
+  @keyframes transform {
+            0%, 100% { border-radius: 33% 67% 70% 30% / 30% 30% 70% 70%; }
+            20% { border-radius: 37% 63% 51% 49% / 37% 65% 35% 63%; }
+            40% { border-radius: 36% 64% 64% 36% / 64% 48% 52% 36%; }
+            60% { border-radius: 37% 63% 51% 49% / 30% 30% 70% 70%; }
+            80% { border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%; }
+  }
+        
+  @keyframes movement_one {
+            0%, 100% { transform: none; }
+            50% { transform: translate(50%, 20%) rotateY(10deg) scale(1.2); }
+  }
+        
+  @keyframes movement_two {
+            0%, 500% { transform: none; }
+            50% { transform: translate(50%, 20%) rotate(-200deg) scale(1.2); }
+  }
+  @keyframes movement_tthree {
+            0%, 500% { transform: none; }
+            50% { transform: translate(50%, 20%) rotate(200deg) scale(1.2); }
   }

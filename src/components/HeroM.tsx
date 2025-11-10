@@ -26,7 +26,7 @@ function HeroM({}) {
           }}
           className="inline-block"
         >
-          <img src="/imge.png" className="w-[400px] p-5"></img>
+          <img src="/foto2.png" className="w-[400px] p-5"></img>
         </motion.span>
        
     </motion.div>

@@ -34,7 +34,7 @@ function App() {
 
   useDynamicFavicon();
   const [isMobile, setIsMobile] = useState(false);
-  const image = useLoader(TextureLoader, "/imge.png");
+  const image = useLoader(TextureLoader, "/foto2.png");
   const itemsNav = [
     { data: "Inicio", link: "inicio" },
     { data: "Proyectos", link: "proyectos" },
@@ -76,17 +76,22 @@ function App() {
   return (
    
     
-    <div className="container-scroll  w-screen h-screen flex md:flex-row flex-col bg-blue-700 justify-center items-center text-black px-[0vw] md:px-[500vw] py-[5000px]  md:py-[0vh]    gap-[1000px] z-1 ">
-    
+    <div className="gradient-bg container-scroll  w-screen h-screen flex md:flex-row flex-col  justify-center items-center text-black px-[0vw] md:px-[500vw] py-[5000px]  md:py-[0vh]    gap-[1000px] z-1 ">
+      
+      
       {/* 🧭 NAVBAR */}
       <Navbar items={itemsNav} onNavigate={handleNavigate} />
 
       {/* 🏠 SECCIÓN INICIO */}
+    
       <section
         id="inicio"
         ref={inicioRef}
         className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth "
       >
+           
+          
+      
         <div className="  relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] hth bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex md:flex-row flex-col">
           {!isMobile ? (
             <div className="w-[500px] h-[500px] flex justify-center items-center">
@@ -101,6 +106,9 @@ function App() {
             <TextoFor texto={text.split("")} />
           </div>
         </div>
+         
+         
+          
       </section>
 
       
@@ -109,6 +117,9 @@ function App() {
         ref={proyectosRef}
         className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth  "
       >
+         
+        
+          
         <div className="  relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] hth bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex flex-col">
               
           <div className=" flex w-[80%]   h-[25%] justify-center  xl:text-8xl text-[45px] font-extrabold flex-col ">
@@ -117,13 +128,14 @@ function App() {
           </div>
           <InfiniteScroll projects={proyectos}  />
         </div>
+        
       </section>
       <section
         id="proyectos"
         ref={sobreMiRef}
         className="snap-start w-screen h-screen  flex justify-center items-center shrink-0 pth  "
       >
-       
+         
        <AboutCard
         title="Sobre mí"
         name="Randy Arteaga"
@@ -149,8 +161,11 @@ function App() {
           },
         ]}
       />
-
+       
       </section>
+      
+      
+      
     </div>
   
 
