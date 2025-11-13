@@ -39,7 +39,7 @@ const InfiniteScroll: React.FC<InfiniteScrollProps> = ({ projects }) => {
         } justify-center items-center`}
         drag={isMobile ? "y" : "x"} 
         dragConstraints={containerRef}
-        dragElastic={0.15}
+        dragElastic={1.15}
         dragTransition={{ bounceStiffness: 200, bounceDamping: 20 }}
       >
         {projects.map((project, i) => (

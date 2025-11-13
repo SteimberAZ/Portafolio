@@ -183,7 +183,7 @@ function App() {
       >
         <ContactCard
           title="Contacto"
-          phone="+593 98 123 4567"
+          phone="+593 96 973 7596"
           email="randyarteaga1919@gmail.com"
           linkedin ="https://www.linkedin.com/in/randy-arteaga-85b009349/"
         />
