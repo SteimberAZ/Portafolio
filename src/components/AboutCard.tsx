@@ -1,5 +1,3 @@
-
-
 type SocialLink = {
   href: string;
   icon: string;
@@ -32,13 +30,13 @@ const AboutCard: React.FC<AboutCardProps> = ({
       </div>
 
       {/* Descripción */}
-      <div className="flex w-[80%] h-[55%] lg:h-[40%] text-white md:text-[1.5rem] lg:text-3xl sm:text-[1.2rem] text-[1rem] font-normal bnon md:border-b md:border-white/50">
+      <div className="flex w-[80%] h-[55%] lg:h-[40%] text-white md:text-[1.5rem] lg:text-3xl sm:text-[1.2rem] text-[1rem] font-normal border-b md:border-white/50">
         {description}
       </div>
 
       {/* Redes sociales */}
       <div className="flex w-[80%] md:h-[10%] h-[20%] text-white text-4xl font-normal justify-center items-center">
-        <div className="flex gap-6 justify-start mt-6 w-[100%] flex-row">
+        <div className="flex gap-6 justify-start mt-6 w-full flex-row">
           {socialLinks.map((link, index) => (
             <a
               key={index}
@@ -50,7 +48,7 @@ const AboutCard: React.FC<AboutCardProps> = ({
               <img
                 src={link.icon}
                 alt={link.alt}
-                className="md:w-8 md:h-8 w-5 h-5 invert dark:invert-0 rimg"
+                className="md:w-8 md:h-8 w-5 h-5 invert dark:invert-0"
               />
             </a>
           ))}

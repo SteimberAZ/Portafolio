@@ -51,14 +51,7 @@
   }
 
 }
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
+ 
 
 
   @keyframes gradient {
@@ -67,7 +60,7 @@
             100% { background-position: 0% 50%; }
   }
   .gradient-bg {
-            background: linear-gradient(-45deg, #4a9fc4, #65a0e3, #4782ea, #1d62bd);
+            background: linear-gradient(-45deg, #4f88bb, #4886ea, #5e8ae9, #4197c2);
             background-size: 400% 400%;
             animation: gradient 10s ease infinite;
   }

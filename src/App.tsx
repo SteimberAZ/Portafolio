@@ -10,6 +10,7 @@ import useDynamicFavicon from "./components/useDynamicFavicon";
 import { useRef } from "react";
 import InfiniteScroll from "./components/InfiniteScroll";
 import AboutCard from "./components/AboutCard";
+import ContactCard from "./components/ContactCard";
 import useLockScroll from "./components/useLockScroll";
 
 function App() {
@@ -39,26 +40,37 @@ function App() {
     { data: "Inicio", link: "inicio" },
     { data: "Proyectos", link: "proyectos" },
     { data: "Sobre mí", link: "sobreMi" },
-    { data: "Contacto", link: "" },
+    { data: "Contacto", link: "contacto" },
   ];
  
   const text = `RANDY ARTEAGA   
   ESTUDIANTE DE ING.DE SOFTWARE`;
-  
+ 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 1357);
+    const handleResize = () => {
+    setIsMobile(window.innerWidth <= 1357);
+    inicioRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
     handleResize(); // ejecutar una vez al inicio
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("orientationchange", handleResize);
+
+    return () => {
+       window.removeEventListener("resize", handleResize);
+       window.removeEventListener("orientationchange", handleResize);
+    };
   }, []);
   const inicioRef = useRef<HTMLDivElement | null>(null);
   const proyectosRef = useRef<HTMLDivElement | null>(null);
   const sobreMiRef = useRef<HTMLDivElement | null>(null);
+  const contactoRef = useRef<HTMLDivElement | null>(null);
   const handleNavigate = (section: string) => {
    const refs: Record<string, React.RefObject<HTMLDivElement | null>> = {
     inicio: inicioRef,
     proyectos: proyectosRef,
     sobreMi: sobreMiRef,
+    contacto: contactoRef,
   };
 
     const ref = refs[section];
@@ -89,7 +101,7 @@ function App() {
         ref={inicioRef}
         className="snap-start w-screen h-screen flex flex-col md:flex-row justify-center items-center shrink-0 pth "
       >
-           
+        
           
       
         <div className="  relative shadow-sm top-[60px] h-[70%] min-h-[350px]  w-[80%] min-w-[330px] hth bg-white/20 backdrop-blur-lg rounded-2xl border border-white/30 p-6 text-white text-xl font-bold overflow-hidden transition-all duration-200 animate-showup z-10 justify-center items-center flex md:flex-row flex-col">
@@ -131,7 +143,7 @@ function App() {
         
       </section>
       <section
-        id="proyectos"
+        id="sobreMi"
         ref={sobreMiRef}
         className="snap-start w-screen h-screen  flex justify-center items-center shrink-0 pth  "
       >
@@ -145,27 +157,39 @@ function App() {
         Este portafolio refleja mi crecimiento y aprendizaje como futuro desarrollador.`}
         socialLinks={[
           {
-            href: "https://www.instagram.com/steimber.1",
+            href: "https://github.com/SteimberAZ",
+            icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg",
+            alt: "GitHub",
+          },
+          {
+            href: "https://www.instagram.com/tuusuario",
             icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg",
             alt: "Instagram",
           },
           {
-            href: "https://www.tiktok.com/@randy_arteaga19",
+            href: "https://www.tiktok.com/@tuusuario",
             icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg",
             alt: "TikTok",
-          },
-          {
-            href: "https://github.com/SteimberAZ",
-            icon: "https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg",
-            alt: "GitHub",
           },
         ]}
       />
        
       </section>
+
+      <section
+        id="contacto"
+        ref={contactoRef}
+        className="snap-start w-screen h-screen  flex justify-center items-center shrink-0 pth  "
+      >
+        <ContactCard
+          title="Contacto"
+          phone="+593 98 123 4567"
+          email="randyarteaga1919@gmail.com"
+          linkedin ="https://www.linkedin.com/in/randy-arteaga-85b009349/"
+        />
+      </section>
       
-      
-      
+
     </div>
   
 
