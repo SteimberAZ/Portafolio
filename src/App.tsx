@@ -12,7 +12,7 @@ import InfiniteScroll from "./components/InfiniteScroll";
 import AboutCard from "./components/AboutCard";
 import ContactCard from "./components/ContactCard";
 import useLockScroll from "./components/useLockScroll";
-
+import WaterMark from "./components/WaterMark";
 
 function App() {
   const proyectos = [
@@ -94,7 +94,8 @@ function App() {
       
       {/* 🧭 NAVBAR */}
       <Navbar items={itemsNav} onNavigate={handleNavigate} />
-
+    
+      <WaterMark></WaterMark>
       {/* 🏠 SECCIÓN INICIO */}
     
       <section
