@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
   const loader = document.getElementById("preloader");
   if (loader) {
     loader.style.opacity = "0";
-    loader.style.transition = "opacity 4s";
+    loader.style.transition = "opacity 0.4s";
     
     setTimeout(() => {
       loader.style.display = "none";
