@@ -13,6 +13,7 @@ import AboutCard from "./components/AboutCard";
 import ContactCard from "./components/ContactCard";
 import useLockScroll from "./components/useLockScroll";
 
+
 function App() {
   const proyectos = [
   {
@@ -42,7 +43,7 @@ function App() {
     { data: "Sobre mí", link: "sobreMi" },
     { data: "Contacto", link: "contacto" },
   ];
- 
+
   const text = `RANDY ARTEAGA   
   ESTUDIANTE DE ING.DE SOFTWARE`;
  
